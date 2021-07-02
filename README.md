@@ -1,5 +1,5 @@
 # Neural_PDE
-Report to Neural Time-Dependent Partial Differential Equation
+Report to Neural Time-Dependent Partial Differential Equation \\
 https://arxiv.org/abs/2009.03892
 @article{hu2020neural,
   title={Neural time-dependent partial differential equation},
