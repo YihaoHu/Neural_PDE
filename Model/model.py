@@ -35,7 +35,7 @@ def split_final(dat, t1,t2):
     print(len(dat),len(dat[0]))
     return final_x, final_y, dat
 
-def flattern(p):
+def flatten(p):
     pred_y_matrix = [[]for _ in range(len(p[0])) ]
     for pp in p:
         a = pp.tolist()
@@ -56,8 +56,8 @@ def data_normalize(Dat):
 def multi_heatmap(Test_y, Pred_y, plot_name):
     Test_y = Test_y.reshape(Test_y.shape[0],Test_y.shape[1],Test_y.shape[2])
     Pred_y = Pred_y.reshape(Pred_y.shape[0],Pred_y.shape[1],Pred_y.shape[2])
-    py = flattern(Pred_y)
-    ty = flattern(Test_y)
+    py = flatten(Pred_y)
+    ty = flatten(Test_y)
     #Plot the new heatmap of predict data vs test data
     plt.figure()
     print(len(py),len(ty))
@@ -113,8 +113,8 @@ def DE_Learner(data, train_time, predict_time, stride, test, plot_name):
     model, hist = stacked_LSTM(train_x,train_y)
     pred_y = model.predict(test_x, verbose=1)
     error = multi_heatmap(test_y, pred_y, plot_name)
-    py = flattern(pred_y)
-    ty = flattern(test_y)
+    py = flatten(pred_y)
+    ty = flatten(test_y)
     fig1 = plt.figure()
     for j in range(len(ty)):
         plt.scatter(range(len(ty[j])),[ty[j][i]-py[j][i] for i in range(len(ty[j]))])
