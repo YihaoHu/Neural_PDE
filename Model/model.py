@@ -53,18 +53,18 @@ def multi_heatmap(Test_y, Pred_y, plot_name):
     ax1 = sns.heatmap(np.array(ty).T,vmin = 0, vmax = 1)
     ax1.set_title('Exact Data')
     ax1.set(xlabel='X (grid point)', ylabel='Time Step')
-    ax1.tick_params(labelsize=10)
+    ax1.tick_params(labelsize=15)
     f1 = ax1.get_figure()
-    f1.savefig(output + str(plot_name) + '_Exact_heatmap.pdf',bbox_inches='tight')
-    plt.show()
+    f1.savefig(output + str(plot_name) + '_Exact_heatmap.png', bbox_inches='tight')
+    #plt.show()
     plt.figure()
     ax2 = sns.heatmap(np.array(py).T,vmin = 0, vmax = 1)
     ax2.set_title('Predicted Data')
     ax2.set(xlabel='X (grid point)', ylabel='Time Step')
-    ax2.tick_params(labelsize=10)
+    ax2.tick_params(labelsize=15)
     f2 = ax2.get_figure()
-    f2.savefig(output + str(plot_name) + '_Predicted_heatmap.pdf',bbox_inches='tight')
-    plt.show()
+    f2.savefig(output + str(plot_name) + '_Predicted_heatmap.png',bbox_inches='tight')
+    #plt.show()
     return 
 
 def stacked_LSTM(X, Y, training_epoch):
@@ -87,7 +87,7 @@ def stacked_LSTM(X, Y, training_epoch):
     end = time.time()
     print("Total compile time: --------", end - start, 's')
     return model, hist
-# Attention added Model
+
 # def stacked_LSTM(X, Y, training_epoch):
 #     time_steps = X.shape[1]
 #     input_dim = X.shape[2]
