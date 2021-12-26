@@ -77,8 +77,8 @@ def stacked_LSTM(X, Y, training_epoch):
     start = time.time()
     model = Sequential()
     #model.add(BatchNormalization())
-    model.add(Bidirectional(LSTM(20,activation='tanh', input_shape=(time_step, input_dim),return_sequences=True)))
-    model.add(Bidirectional(LSTM(20,activation='tanh', input_shape=(time_step, input_dim),return_sequences=True)))
+    model.add(Bidirectional(LSTM(20,activation='tanh', input_shape=(time_step, input_dim), return_sequences=True)))
+    model.add(Bidirectional(LSTM(20,activation='tanh', input_shape=(time_step, input_dim), return_sequences=True)))
     model.add(Dense(out))
     model.compile(loss='mean_squared_error', optimizer='adam')
     hist = model.fit(X, Y, epochs=training_epoch, validation_split=.2,
@@ -88,6 +88,7 @@ def stacked_LSTM(X, Y, training_epoch):
     print("Total compile time: --------", end - start, 's')
     return model, hist
 
+# with self attention layer
 # def stacked_LSTM(X, Y, training_epoch):
 #     time_steps = X.shape[1]
 #     input_dim = X.shape[2]
