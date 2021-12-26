@@ -66,6 +66,7 @@ def heat2d(dxdy, X, T, plot = 0):
     return np.array(heat_dat)
 import keras
 heatmodel = keras.models.load_model('heatmodel')
+
 T = 0.15
 X = 2.0
 dx = 0.02
@@ -73,9 +74,6 @@ dx = 0.02
 t1, t2 = 30, 10
 N = 20
 heat_dat = heat2d(dx, X, T, 0)
-print(heat_dat.shape)
-heat_final_x, heat_final_y, heat_dat = split_final(heat_dat, t1, t2)
-data_x, data_y = data_split(heat_dat,  t1, t2, 1 )
-train_x, test_x, train_y, test_y = train_test_split(data_x, data_y, test_size= 0.2)
-pred_y = heatmodel.predict(test_x, verbose=1)
-multi_heatmap(test_y, pred_y, 'heat')
+name = 'heat'
+heat_py, heat_ty, heat_err, heatmodel = DE_Learner(heat_dat, t1, t2, 1 , .2, N, name, plot = 1)
+heatmodel.save("heatmodel")
