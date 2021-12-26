@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error
 import matplotlib.image as mpimg
 import seaborn as sns
 import tensorflow as tf
-from functions import data_normalize, flatten, DE_Learner, split_final, data_split, train_test_split, multi_heatmap
+from model import data_normalize, flatten, DE_Learner, split_final, data_split, train_test_split, multi_heatmap
 matplotlib.rcParams.update({'font.size': 14})
 output ='./NSCH/'
 
