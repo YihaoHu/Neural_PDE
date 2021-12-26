@@ -148,9 +148,5 @@ def DE_Learner(data, train_time, predict_time, stride, test_portion, training_ep
     print('----------------MSE: ', np.mean(error))
     py = np.array(py).T
     ty = np.array(ty).T
-    # with open(str(plot_name) + "_mse.txt", "w") as txt_file:
-    #     txt_file.write('mse: ' + str(np.mean(error)) + "\n")
-    #     for m in error:
-    #         txt_file.write(str(m) + "\n")
     print('###########################END##########################')
     return py, ty, error, model
