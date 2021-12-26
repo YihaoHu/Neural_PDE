@@ -92,6 +92,7 @@ t1, t2 = 30,10
 final_x, final_y, burgers_data = split_final(burgers_data,t1,t2)
 name = 'burgers'
 print(final_x.shape, final_y.shape)
+
 N = 20
 burger_py, burger_ty, burger_err, burgermodel = DE_Learner(burgers_data, t1, t2, 1 , .2, N, name, plot = 1)
 burgermodel.save("burgersmodel")
