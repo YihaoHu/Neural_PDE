@@ -96,6 +96,7 @@ def stacked_LSTM(X, Y, training_epoch):
     
 #     model_input = Input(shape=(time_steps, input_dim))
 #     x = LSTM(64, return_sequences=True)(model_input)
+#     x = LSTM(64, return_sequences=True)(model_input)
 #     x = Attention(32)(x)
 #     x = Dense(out)(x)
 #     model = Model(model_input, x)
