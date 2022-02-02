@@ -79,6 +79,7 @@ def stacked_LSTM(X, Y, training_epoch):
     #model.add(BatchNormalization())
     model.add(Bidirectional(LSTM(20,activation='tanh', input_shape=(time_step, input_dim), return_sequences=True)))
     model.add(Bidirectional(LSTM(20,activation='tanh', input_shape=(time_step, input_dim), return_sequences=True)))
+    model.add(SeqSelfAttention(attention_activation='sigmoid'))
     model.add(Dense(out))
     model.compile(loss='mean_squared_error', optimizer='adam')
     hist = model.fit(X, Y, epochs=training_epoch, validation_split=.2,
