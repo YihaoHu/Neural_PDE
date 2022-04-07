@@ -1,5 +1,5 @@
 # Neural_PDE
-### Report to Neural-PDE: A RNN based neural network for solving time dependent PDEs <br>
+### Report to Neural-PDE: A RNN based neural networkfor solving time dependent PDEs <br>
 #### Requirements:
 ##### Tensorflow >= 2.7, Keras >= 2.7, Python = 3.7 <br>
 https://arxiv.org/abs/2009.03892 <br>
